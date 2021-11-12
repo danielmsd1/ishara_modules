@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="ISHARA.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.7500982"
+     inkscape:cx="375.95078"
+     inkscape:cy="561.25985"
+     inkscape:window-width="1920"
+     inkscape:window-height="1046"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4207" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient4085"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#0000dd;stop-opacity:1;"
+         offset="0"
+         id="stop4083" />
+    </linearGradient>
+    <filter
+       inkscape:label="Basic Two Lights Bump"
+       inkscape:menu="Bumps"
+       inkscape:menu-tooltip="Two types of lighting emboss effect"
+       style="color-interpolation-filters:sRGB;"
+       id="filter2816"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         result="result2"
+         type="luminanceToAlpha"
+         in="SourceGraphic"
+         id="feColorMatrix2800" />
+      <feSpecularLighting
+         specularConstant="0.5"
+         surfaceScale="-15"
+         specularExponent="10"
+         result="result10"
+         id="feSpecularLighting2804">
+        <feDistantLight
+           elevation="20"
+           azimuth="225"
+           id="feDistantLight2802" />
+      </feSpecularLighting>
+      <feDiffuseLighting
+         diffuseConstant="0.5"
+         surfaceScale="15"
+         id="feDiffuseLighting2808">
+        <feDistantLight
+           azimuth="225"
+           elevation="20"
+           id="feDistantLight2806" />
+      </feDiffuseLighting>
+      <feComposite
+         result="result11"
+         in2="result10"
+         operator="arithmetic"
+         k2="0.5"
+         k3="0.5"
+         id="feComposite2810" />
+      <feComposite
+         in="result11"
+         result="result9"
+         operator="arithmetic"
+         k2="1"
+         k3="1"
+         in2="SourceGraphic"
+         id="feComposite2812" />
+      <feComposite
+         in2="SourceGraphic"
+         operator="in"
+         in="result9"
+         id="feComposite2814" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g939"
+       transform="rotate(90.381501,104.99979,148.49998)">
+      <path
+         id="rect846"
+         style="fill:#0000ff;stroke:none;stroke-width:33.3033;stroke-linecap:round;paint-order:markers fill stroke"
+         d="m 636.39453,292.79688 -571.076171,1.63476 0.337891,118.28125 512.92187,-1.47266 -3.93554,417.77539 70.10156,-53.26757 -0.54297,53.97461 80.54102,-57.32227 3.63867,-361.58984 z"
+         transform="scale(0.26458333)" />
+      <circle
+         style="fill:#0000ff;stroke:none;stroke-width:8.81149;stroke-linecap:round;paint-order:markers fill stroke"
+         id="path3261"
+         cx="96.601524"
+         cy="163.10341"
+         r="36.236359" />
+      <circle
+         style="fill:#ff0000;stroke:#0000dd;stroke-width:5.69844;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         id="path3263"
+         cx="27.972063"
+         cy="130.7103"
+         r="7.6865005" />
+      <circle
+         style="fill:#ffffff;stroke:none;stroke-width:4.40575;stroke-linecap:round;paint-order:markers fill stroke"
+         id="circle4143"
+         cx="96.601524"
+         cy="163.10341"
+         r="18.118179" />
+    </g>
+  </g>
+</svg>
