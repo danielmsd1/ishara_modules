@@ -67,7 +67,9 @@ class _HomePageState extends State<HomePage>
                           //todo!: check the container and configure for permissions and waiting.
                           !controller.value.isInitialized
                               ? Container()
-                              : const CameraHome(),
+                              : CameraHome(
+                                  cameras: cameras,
+                                ),
                           Column(
                             children: const [
                               Padding(

@@ -17,9 +17,11 @@ import 'package:ishara_modules/constants.dart';
 import 'package:video_player/video_player.dart';
 
 class CameraHome extends StatefulWidget {
-  const CameraHome({Key? key}) : super(key: key);
+  final List<CameraDescription> cameras;
+  const CameraHome({Key? key, required this.cameras}) : super(key: key);
   @override
   _CameraExampleHomeState createState() {
+    // ignore: no_logic_in_create_state
     return _CameraExampleHomeState();
   }
 }
@@ -537,7 +539,7 @@ class _CameraExampleHomeState extends State<CameraHome>
     );
   }
 
-  List<CameraDescription> cameras = [];
+  // List<CameraDescription> cameras = [];
 
   /// Display a row of toggle to select the camera (or a message if no camera is available).
   Widget _cameraTogglesRowWidget() {
@@ -552,10 +554,10 @@ class _CameraExampleHomeState extends State<CameraHome>
       onNewCameraSelected(description);
     };
 
-    if (cameras.isEmpty) {
+    if (widget.cameras.isEmpty) {
       return const Text('No camera found');
     } else {
-      for (CameraDescription cameraDescription in cameras) {
+      for (CameraDescription cameraDescription in widget.cameras) {
         toggles.add(
           SizedBox(
             width: 90.0,
