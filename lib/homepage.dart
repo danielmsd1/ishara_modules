@@ -1,5 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:ishara_modules/app_cubits/theme_toggle_cubit.dart';
 import 'package:ishara_modules/camera_home.dart';
 import 'package:ishara_modules/constants.dart';
 import 'package:ishara_modules/custom_drawer.dart';
@@ -53,6 +54,7 @@ class _HomePageState extends State<HomePage>
             double slide = maxSlide * _animationController.value;
             double scale = 1 - (_animationController.value * 0.3);
             return MaterialApp(
+              theme: ThemeData.dark(),
               home: Scaffold(
                 body: Stack(
                   children: [

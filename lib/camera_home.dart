@@ -11,8 +11,8 @@ import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ishara_modules/app_cubits/ishara_toggle_cubit.dart';
 import 'package:ishara_modules/constants.dart';
 import 'package:video_player/video_player.dart';
 
@@ -132,6 +132,9 @@ class _CameraExampleHomeState extends State<CameraHome>
 
   @override
   Widget build(BuildContext context) {
+    //the cubit for the toggle
+    final isharaCubit = IsharaCubit();
+
     return Scaffold(
       key: _scaffoldKey,
       body: Column(
@@ -524,17 +527,19 @@ class _CameraExampleHomeState extends State<CameraHome>
         ),
 
         ///todo:Trigger the gesture recognition mode.
-        GestureDetector(
-            child: SvgPicture.asset(
-              assetName,
-              semanticsLabel: "Ishara",
-              height: 50,
-              color: Colors.grey,
-            ),
-            onTap: () {
-              // ignore: avoid_print
-              print("state");
-            }),
+
+        // GestureDetector(
+        //   child: SvgPicture.asset(
+        //     assetName,
+        //     semanticsLabel: "Ishara",
+        //     height: 50,
+        //     color: Colors.blue,
+        //   ),
+        //   onTap: () {
+        //     // ignore: avoid_print
+        //     print("Current state is");
+        //   },
+        // ),
       ],
     );
   }
