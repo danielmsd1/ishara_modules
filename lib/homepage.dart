@@ -46,6 +46,9 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
+    //define the theme
+    final themeToggle = ThemeCubit();
+
     return GestureDetector(
       onTap: toggle,
       child: AnimatedBuilder(
@@ -53,41 +56,65 @@ class _HomePageState extends State<HomePage>
           builder: (context, _) {
             double slide = maxSlide * _animationController.value;
             double scale = 1 - (_animationController.value * 0.3);
-            return MaterialApp(
-              theme: ThemeData.dark(),
-              home: Scaffold(
-                body: Stack(
-                  children: [
-                    const CustomDrawer(),
-                    Transform(
-                      transform: Matrix4.identity()
-                        ..translate(slide)
-                        ..scale(scale),
-                      alignment: Alignment.centerLeft,
-                      child: Stack(
+            //todo: Remove streamBuilder in future.
+            return StreamBuilder<bool>(
+                initialData: false,
+                stream: themeToggle.stream,
+                builder: (context, snapshot) {
+                  return MaterialApp(
+                    theme: snapshot.data == true
+                        ? ThemeData.dark()
+                        : ThemeData.light(),
+                    home: Scaffold(
+                      body: Stack(
                         children: [
-                          //todo!: check the container and configure for permissions and waiting.
-                          !controller.value.isInitialized
-                              ? Container()
-                              : CameraHome(
-                                  cameras: cameras,
+                          const CustomDrawer(),
+                          Transform(
+                            transform: Matrix4.identity()
+                              ..translate(slide)
+                              ..scale(scale),
+                            alignment: Alignment.centerLeft,
+                            child: Stack(
+                              children: [
+                                //todo!: check the container and configure for permissions and waiting.
+                                !controller.value.isInitialized
+                                    ? Container()
+                                    : CameraHome(
+                                        cameras: cameras,
+                                      ),
+                                Column(
+                                  children: const [
+                                    Padding(
+                                      padding: EdgeInsets.only(bottom: 20),
+                                    )
+                                  ],
+                                  mainAxisAlignment: MainAxisAlignment.end,
                                 ),
-                          Column(
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 20),
-                              )
-                            ],
-                            mainAxisAlignment: MainAxisAlignment.end,
+                              ],
+                            ),
                           ),
                         ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-            );
+                  );
+                });
           }),
     );
   }
 }
+
+// //Get the theme data from the sharedpref.
+// getDataFromSharedPref() async {
+//   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+//   String currentValue = sharedPreferences.getString("isDarkTheme").toString();
+//   return returnBool(currentValue);
+// }
+
+// bool returnBool(currentValue) {
+//   if (currentValue.toLowerCase() == 'true') {
+//     return true;
+//   } else if (currentValue.toLowerCase() == 'false') {
+//     return false;
+//   }
+//   throw "Returning null";
+// }
