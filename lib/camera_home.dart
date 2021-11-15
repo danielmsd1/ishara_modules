@@ -133,7 +133,7 @@ class _CameraExampleHomeState extends State<CameraHome>
   @override
   Widget build(BuildContext context) {
     //the cubit for the toggle
-    final isharaCubit = IsharaCubit();
+    // final isharaCubit = IsharaCubit();
 
     return Scaffold(
       key: _scaffoldKey,

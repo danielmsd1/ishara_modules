@@ -5,6 +5,7 @@ import 'package:ishara_modules/app_cubits/ishara_toggle_cubit.dart';
 import 'package:ishara_modules/app_cubits/theme_toggle_cubit.dart';
 import 'package:ishara_modules/app_cubits/voice_toggle_cubit.dart';
 import 'package:ishara_modules/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 ///my custom drawer
 class CustomDrawer extends StatelessWidget {
@@ -96,4 +97,10 @@ class CustomDrawer extends StatelessWidget {
       ),
     );
   }
+}
+
+//Add the theme data to the sharedpref.
+addDataToSharedPref(String value) async {
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  sharedPreferences.setString("isDarkTheme", value);
 }
